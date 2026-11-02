@@ -1,0 +1,1 @@
+const a={id:"itch",connect:async()=>!1,language:()=>null,loadingDone:()=>{},gameplayStart:()=>{},gameplayStop:()=>{},celebrate:()=>{},hasAds:!1,interstitial:async()=>!1,rewarded:async()=>({shown:!1,rewarded:!1}),cloud:null,hasLeaderboard:!1};export{a as noPlatform};

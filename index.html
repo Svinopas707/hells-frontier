@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <!-- Added to a phone's home screen, the game opens without browser bars
+         (iPhone Safari has no fullscreen for pages; see main.ts). -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hell's Frontier" />
+    <title>Hell's Frontier</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a0a0a;
+        overflow: hidden;
+        /* Yandex Games moderation: no text selection, callout or browser
+           gestures on long press; the context menu is blocked in main.ts. */
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        touch-action: none;
+      }
+      /* Centring is Phaser's (scale.autoCenter, as margins on the canvas).
+         Centring here as well added the two offsets together: in a window
+         larger than the canvas it sat off to the right and down. */
+      #game-root {
+        width: 100%;
+        height: 100%;
+      }
+      canvas {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+      /* A phone held upright: the field is 16:9 and would shrink to a strip,
+         so the game asks to be turned instead (the page keeps running). */
+      #rotate {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        background: #0a0a0a;
+        color: #e2e8f0;
+        font: 16px/1.6 monospace;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+      }
+      #rotate .icon {
+        font-size: 56px;
+        color: #ffd166;
+      }
+      @media (orientation: portrait) and (pointer: coarse) {
+        #rotate {
+          display: flex;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-Bv3aQZ2R.js"></script>
+  </head>
+  <body>
+    <div id="game-root"></div>
+    <div id="rotate">
+      <div class="icon">⟳</div>
+      <div>Поверните телефон горизонтально</div>
+      <div style="color: #94a3b8">Turn your phone sideways</div>
+    </div>
+  </body>
+</html>
